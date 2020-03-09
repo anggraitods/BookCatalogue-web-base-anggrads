@@ -49,15 +49,8 @@ namespace BooksCatalogue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] Review review)
         {
-			//try
-			//{
-				//return Task.FromResult AddReview(review);
-			//}
-			//catch (Exception ex)
-			//{
-				//return Task.FromException<IActionResult>(ex);
-			//}
-            return View(review);
+		
+            return View (review);
         }
 
         private ActionResult ErrorAction(string message)
