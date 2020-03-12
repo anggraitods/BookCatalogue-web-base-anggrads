@@ -14,7 +14,7 @@ namespace BooksCatalogue.Controllers
 {
     public class BooksController : Controller
     {
-        // private string apiEndpoint = "https://bookscatalogueapi-dicoding.azurewebsites.net/api/books/";
+        // private string apiEndpoint = "https://katalogbukuapi-anggrads.azurewebsites.net/api/books/";
         private string apiEndpoint = "https://localhost:9000/api/books";
         private readonly Httpclient client;
         HttpclientHandler clientHandler = new HttpclientHandler();
