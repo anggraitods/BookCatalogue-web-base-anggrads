@@ -11,8 +11,10 @@ namespace BooksCatalogue.Controllers
     public class ReviewController : Controller
     {
         private string apiEndpoint = "https://katalogbukuapi-anggrads.azurewebsites.net/api/";
+        //private string apiEndpoint = "https://localhost:9000/api/";
 
-        public ReviewController() {
+        public ReviewController()
+        {
         }
 
         // GET: Review/AddReview/2
@@ -28,7 +30,7 @@ namespace BooksCatalogue.Controllers
 
             HttpResponseMessage response = await client.SendAsync(request);
 
-            switch(response.StatusCode)
+            switch (response.StatusCode)
             {
                 case HttpStatusCode.OK:
                     string responseString = await response.Content.ReadAsStringAsync();
@@ -49,8 +51,8 @@ namespace BooksCatalogue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] Review review)
         {
-		
-            return View (review);
+
+            return View(review);
         }
 
         private ActionResult ErrorAction(string message)
